@@ -241,3 +241,61 @@ Fix:
 No fix required unless persistent state is critical. Safe to ignore.
 
 ```
+
+❌ Error #5: Empty firebaseConfig
+
+Location: firebase.js
+```
+Problem: Firebase config values were missing.
+```
+Fix:
+```
+const firebaseConfig = {
+  apiKey: "AIzaSyAzNdwxbEEflc7SdmXugUvgzlZmnN49gnM",
+  authDomain: "omniplex-5153c.firebaseapp.com",
+  projectId: "omniplex-5153c",
+  storageBucket: "omniplex-5153c.appspot.com",
+  messagingSenderId: "167549553627",
+  appId: "1:167549553627:web:0ae7fbc369a871361435fe",
+  measurementId: "G-VLHGLES8LH"
+};
+
+```
+
+
+❌ Error #6: Incorrect storageBucket Domain
+
+Problem:
+```
+"omniplex-5153c.firebasestorage.app" is invalid.
+```
+Fix:
+```
+storageBucket: "omniplex-5153c.appspot.com"
+
+```
+
+
+❌ Error #7: Redundant initializeFirebase() Export
+Problem:
+```
+initializeFirebase was exported but unused.
+```
+Fix:
+```
+Removed redundant function and simplified Firebase exports to:
+```
+
+
+❌ Error 3: App Crash on Load
+
+Issue: 
+```
+Incomplete Firebase config led to runtime crash.
+```
+
+Fix:
+```
+Fixed with correct config and re-initialized Firebase.
+```
+
