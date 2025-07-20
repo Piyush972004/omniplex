@@ -203,36 +203,41 @@ npm ERR! ERESOLVE unable to resolve dependency tree
 peerOptional svelte@"^4" from @vercel/speed-insights@1.0.10
 
 
-
 **Cause:**  
-Conflict between Svelte v5 and dependency expecting Svelte v4.  
+``` Conflict between Svelte v5 and dependency expecting Svelte v4.  ```
 
 **Fix:**  
-```bash
-npm install --legacy-peer-deps
+```npm install --legacy-peer-deps```
 
 
 ⚠️ Warning #2: yarn Not Recognized
-Command: npm run dev
+```Command: npm run dev
 -Warning:
 'yarn' is not recognized as an internal or external command
+```
+Fix :
+```npm install -g yarn```
 
-Fix : npm install -g yarn
 ⚠️ Warning #3: Outdated caniuse-lite (Browserslist)
 Command: npm run dev
-Warning:Browserslist: caniuse-lite is outdated.
+```Warning:Browserslist: caniuse-lite is outdated.```
 
 
-Fix :
+Fix : 
+```
 npx update-browserslist-db@latest
 # Then auto-runs:
 npm install caniuse-lite
+ ```
 
 
 ⚠️ Warning #4: redux-persist falling back to noop storage
+```
 Message:redux-persist failed to create sync storage. falling back to noop storage.
+```
 
-fix :
 Fix:
+```
 No fix required unless persistent state is critical. Safe to ignore.
 
+```
